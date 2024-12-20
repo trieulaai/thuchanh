@@ -1,0 +1,222 @@
+/* navbar */
+.nav{
+    min-height: 42px;
+    background-color: red;
+    /* display:flex; dùng để đưa cả hai thẻ ul lên một dòng
+     trong đây .nav là contain,nav-list là flex item  */
+    /* display: flex; */
+    display:flex;
+    justify-content: space-between;
+}
+.navbar-list{
+    padding-left: 10px;
+    /* margin dùng để ul khongo bị dính sát vào mép  */
+    margin: auto 16px;
+}
+.nav-item{
+    color: aliceblue;
+    /* list-style:none dùng để bỏ dấu chấm tròn trong thẻ list */
+    list-style: none;
+      /* margin dùng để không bị dính sát vào mép  */
+    margin: 0 18px;
+      /* display:inline-block dùng để đưa thẻ ul lên một dòngòng trong ul chứ không phải là hai ul trên một dòng  */
+    display: inline-block;
+}
+
+/* form */
+.contain-form{
+    width: 720px;
+    background-color: antiquewhite;
+    padding: 10px;
+    margin: 10px;
+}
+.contain-form{
+    margin: 20px auto 0 auto;
+}
+.form-row{
+    padding: 8px 0px;
+    /* dùng để biến thành layout flex( trong đây sẽ khiến nó nằmnằm ngang ) 
+    dùng display:flex; thì mới có thể dùng được flex :1;*/
+    display: flex;
+}
+.form-input{
+    /* flex:1; dùng để cho dài textext nhập mk tên */
+    flex:1;
+}
+.form-label{
+    /* dùng để cho hai cái tên và password khongo bị chênh lệch nhau  */
+    min-width: 90px; 
+}
+
+/* column layout */
+.column-layout{
+    padding: 12px 0;
+    margin-top: 10px;
+    background-color: antiquewhite;
+    /* width: 720px; không nên cho vào nếu không xấu */
+    display: flex;
+}
+.column-item{
+ padding: 0 16px;
+}
+.phu{
+    flex: 1;
+    order: 2;
+    background-color: red;
+}
+.chinh{
+ flex: 2;
+ order: 1;
+ background-color: blue;
+}
+.ghichu{
+    flex: 1;
+    order: 3;
+    background-color: blue;
+}
+
+/*feature layout */
+.feature-layout{
+    /* margin-top: 32px; */
+    display: flex;
+    /* flex-basis :number dùng để xét khích thước của main size */
+    justify-content: space-around;
+    flex-direction: column;
+}
+@media (min-width:780px) {
+    .feature-layout{
+        flex-direction:row;
+    }
+}
+.feature-item{
+    padding: 0 16px;
+    flex-basis:30%;
+    margin-top: 10px;
+}
+.feature-item:nth-child(1){
+    background-color: aquamarine;
+}
+.feature-item:nth-child(2){
+    background-color: rgb(132, 169, 219);
+}
+.feature-item:nth-child(3){
+    background-color: rgb(236, 134, 187);
+}
+
+
+
+
+/* wrap layout   */
+.wrap-layout{
+    margin-top: 20px;
+    background-color: rgb(178, 78, 152);
+    padding: 12px 0px 23px 0px ;
+    display: flex;
+    /* space-around dùng để cách đều các ô bằng nhau  */
+    justify-content: space-around;
+    /* flex-wrap dùng để đảo xuống dòngdòng */
+    flex-wrap: wrap;
+}
+.wrap-layout-item{
+    background-color: red;
+    color: white;
+    width: 148px;
+    height: 90px;
+    margin-top: 10px;
+    font-size: 40px;
+    /* font-weight dùng để đậm chữ lên  */
+    font-weight: 700;
+    /* line-height dùng để cho các khoảng cách giữa các văn bản rộng ra  */
+    line-height: 90px;
+    /* dùng để căn chỉnh chữ văn bản hoặc nội dung bên trong bên trong một một phần tử theo chiều ngang  */
+    text-align:center ;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+/* center layout */
+.center-layout{
+    background-color: greenyellow;
+    color: white;
+    max-width: 640px;
+    height: 360px;
+    margin: 36px auto 0 auto;
+    padding: 32px 0;
+    display: flex;
+}
+.center-item{
+    font-size: 30px;
+    /* font-weight dùng để chỉnh độ đậm nhạt cho chữ */
+    font-weight: 700px;
+    /* text-align: center; không dùng được???????*/
+     /* dùng để căn chữ ra giữa */
+    margin: auto;
+}
+/* cot */
+.cot{
+    margin: 36px auto 0 auto ;
+    padding: 32px 0px ;
+    height: 320px;
+    background-color: rgb(191, 99, 182); 
+    display: flex;
+    justify-content: space-around;
+    /* align-item:flex-start dùng để dồn ìlex-item vể đầu còn flex-end sẽ bị dồn về cuối 
+    có thể dùng cách la align-self:flex-end nhưng phải viết ở cot-itemitem */
+    align-items: flex-end;
+}
+.cot-item{
+    width: 60px;
+    background-color: red;
+    color: white;
+    height:var(--percent);
+    /* dùng để căn chỉnh chữ ra giữa */
+    text-align: center;
+    animation: growth ease-in 10s;;
+    }
+    @keyframes growth{
+        from{
+            /* opacity là độ trong xuất ,cho lúc đầu bangef 0 */
+            opacity:0;
+            height: calc(var(--percent) - 50%);
+        }
+        to{
+            /* cho đọ trong xuất bàgwf 1 là để có màu dần lênlên */
+            opacity:1;
+            height:var(--percent);
+        }
+    }
+    /*theend  */
+    .theend{
+        margin: 12px auto  48px auto;
+        padding: 32px 0;
+        min-height: 380px;
+        max-width: 790px;
+        display: flex;
+        /* column-reverse dùng để đảo theo hàng */
+        flex-direction: row-reverse;
+    }
+    .theend-first{
+    padding: 4px 16px;
+    background-color: beige;
+    flex: 1;
+    }
+    .theend-second{
+    background-color: blanchedalmond;
+    flex: 1;
+    display: flex;
+    /* column vì mặc định của nó khi dùng display sẽ là
+    flex-direction:row ,bây h phải dùng column để nó trở thành hang dọc  */
+    flex-direction: column-reverse;
+
+    }
+    .theend-scond-one{
+        background-color: rgb(159, 120, 60);
+        padding: 16px 16px;
+        flex: 1;
+    }
+    .theend-second-two{
+        background-color: brown;
+        padding: 4px 19px;
+        flex: 1;
+    }
+
